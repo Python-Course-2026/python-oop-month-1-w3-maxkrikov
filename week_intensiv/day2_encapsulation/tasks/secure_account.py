@@ -6,5 +6,5 @@ class SecureAccount:
         return self.__balance
     def deposit(self, amt):
         if amt > 0:
-            return ValueError()
+            raise ValueError()
         
