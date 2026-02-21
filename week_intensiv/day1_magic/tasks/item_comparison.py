@@ -5,7 +5,7 @@ class Item:
         self.name, self.price = name, price
 
     def __lt__(self, other):
-        return self.price < other
+        return self.price < other.price
 
     def __eq__(self, other):
-        return self.price == other or self.name == other
+        return self.price == other.name and self.name == other.name
