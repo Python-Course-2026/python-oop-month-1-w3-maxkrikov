@@ -1,3 +1,4 @@
+import inspect 
 class Item:
     """ЗАДАЧА: Сравнение товаров по цене через __lt__ и по всем полям через __eq__"""
 
@@ -5,7 +6,9 @@ class Item:
         self.name, self.price = name, price
 
     def __lt__(self, other):
-        return self.price < other.price
+        if inspect.isclass(other):
+            return self.price < other.price
 
     def __eq__(self, other):
-        return self.price == other.price and self.name == other.name
+        if inspect.isclass(other):
+            return self.price == other.price and self.name == other.name
