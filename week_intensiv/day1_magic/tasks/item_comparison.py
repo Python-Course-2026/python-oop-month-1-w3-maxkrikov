@@ -8,4 +8,4 @@ class Item:
         return self.price < other.price
 
     def __eq__(self, other):
-        return self.price == other.name and self.name == other.name
+        return self.price == other.price and self.name == other.name
